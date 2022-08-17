@@ -29,9 +29,12 @@ class Program
 {
     public static void Main()
     {
-       string fullPath = Path.GetFullPath("savedNames.txt");
+        string fullPath = Path.GetFullPath("savedNames.txt");
         IDictionary<string, string> logInPairs = new Dictionary<string, string>();
         StreamWriter streamWriter = new StreamWriter(fullPath);
+        
+        List<Challenge> tasks = new List<Challenge> ();
+        tasks.Add(new Challenge(20, "Walk A Bunch!", "Walk 10,000 steps!"));
         
 
         Console.WriteLine("Welcome to Motorex Daily Challenge App\n\n");
@@ -43,7 +46,8 @@ class Program
         switch (Convert.ToInt32(Console.ReadLine()))
         {
             case 1://Daily challenge
-                Console.WriteLine();
+                Console.WriteLine("Your DAILY CHALLENGE IS: \n\n**********\n\n");
+
                 break;
 
             case 2://leaderboards friends and global add friends 
