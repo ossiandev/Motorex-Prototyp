@@ -27,9 +27,9 @@ public class User
 
 class Program 
 {
-    public static void Main(string v)
+    public static void Main()
     {
-       string fullPath = Path.GetFullPath(v);
+       string fullPath = Path.GetFullPath("savedNames.txt");
         IDictionary<string, string> logInPairs = new Dictionary<string, string>();
         StreamWriter streamWriter = new StreamWriter(fullPath);
         
