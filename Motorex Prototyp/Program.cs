@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 //setup global
@@ -33,13 +34,15 @@ class Program
         //setup local
         string fullPath = Path.GetFullPath("savedNames.txt"); // filepath for savedNames.txt
         IDictionary<string, string> logInPairs = new Dictionary<string, string>(); // hashmap used for logins
-        StreamWriter streamWriter = new StreamWriter(fullPath); //used for saving and loading usernames, challenges etc.
-        streamWriter.WriteLine("hello!");
+        File.WriteAllText(@fullPath, "1234567890");
+
         List<Challenge> tasks = new List<Challenge> ();
         tasks.Add(new Challenge(20, "Walk A Bunch!", "Walk 10,000 steps!"));
         List<User> users = new List<User> ();
-        
+
         //start
+        Console.WriteLine(fullPath);
+        Console.WriteLine(File.ReadAllText(@fullPath));
         Console.WriteLine("Welcome to Motorex Daily Challenge App\n\n");
         Console.WriteLine("1. Receive Daily Challenge\n");
         Console.WriteLine("2. Leaderboards\n");
